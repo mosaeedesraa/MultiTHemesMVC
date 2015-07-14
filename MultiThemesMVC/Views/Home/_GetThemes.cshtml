@@ -1,0 +1,44 @@
+﻿
+<ul class="dropdown-menu">
+
+    <li><a href="javascript::void(0)" onclick="ChangeTheme('Cerulean')">Cerulean</a></li>
+    <li><a href="javascript::void(0)" onclick="ChangeTheme('Cosmo')">Cosmo</a></li>
+    <li><a href="javascript::void(0)" onclick="ChangeTheme('Cyborg')">Cyborg</a></li> 
+    <li><a href="javascript::void(0)" onclick="ChangeTheme('Flatly')">Flatly</a></li>
+    <li><a href="javascript::void(0)" onclick="ChangeTheme('Journaly')">Journaly</a></li>
+    <li><a href="javascript::void(0)" onclick="ChangeTheme('Lumen')">Lumen</a></li>
+    <li><a href="javascript::void(0)" onclick="ChangeTheme('Parper')">Parper</a></li>
+    <li><a href="javascript::void(0)" onclick="ChangeTheme('Readable')">Readable</a></li>
+    <li><a href="javascript::void(0)" onclick="ChangeTheme('SandStone')">SandStone</a></li>
+    <li><a href="javascript::void(0)" onclick="ChangeTheme('Simplex')">Simplex</a></li>
+    <li><a href="javascript::void(0)" onclick="ChangeTheme('Slate')">Slate</a></li>
+    <li><a href="javascript::void(0)" onclick="ChangeTheme('SpaceLap')">SpaceLap</a></li>
+    <li><a href="javascript::void(0)" onclick="ChangeTheme('SuperHero')">SuperHero</a></li>
+    <li><a href="javascript::void(0)" onclick="ChangeTheme('United')">United</a></li>
+    <li><a href="javascript::void(0)" onclick="ChangeTheme('Yeti')">Yeti</a></li>
+     <li><a href="javascript::void(0)" onclick="ChangeTheme('Darkly')">Darkly</a></li>
+</ul>
+
+
+<script>
+    function ChangeTheme(tid)
+    {
+        var ActionUrl = '@Url.Action("ChangeThemeSite","Home")';
+        $.ajax({
+            type: "POST",
+            traditional: true,
+            url: ActionUrl,
+            async: false,
+            data: {
+                ThemeName: tid
+            },
+            dataType: "json",
+            success: function (data) {
+                if (data == true) {
+                    
+                    location.reload();
+                }
+            }
+        });
+    }
+</script>

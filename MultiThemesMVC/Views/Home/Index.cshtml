@@ -1,0 +1,54 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+@*    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />*@
+   <link href="@Url.Content(MultiThemesMVC.Models.StyleSite.CurrentTheme)" rel="stylesheet" />
+</head>
+<body>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <div class="navbar navbar-default navbar-static-top
+            width980px-marginAuto HeaderFooterMargin">
+            <div class="container" id="Container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                  
+                </div>
+                <div class="navbar-collapse collapse">
+
+                    
+                    <ul class="nav navbar-nav navbar-left">
+                       
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle" title="Şablonlar">
+                                <img src="~/Images/themes-icon.png" class="headerImageWidth" /><b class="caret"></b></a>
+                            @{Html.RenderAction("GetThemes", "Home");}
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+    <div id="content" style="min-height:500px;"></div>
+     <div class="navbar navbar-default navbar-static-bootom width980px-marginAuto HeaderFooterMargin footerUstBosluk">
+        <p style="color: white; text-align: center; padding-top: 15px;"> @DateTime.Today.ToString("dd.MM.yyyy") - &copy; <a href="https://github.com/mosaeedesraa" style="color: white">Eng.Mohamad Alsaid - Syria</a> &nbsp;&nbsp;&nbsp; <span style="font-size: smaller"></span></p>
+
+    </div>
+
+
+
+</body>
+</html>
